@@ -13,4 +13,8 @@ class Csv < Command
       end
     end
   end
+
+  def report
+    print result
+  end
 end
