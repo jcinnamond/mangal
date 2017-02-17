@@ -17,7 +17,7 @@ class Runner
       exit if input.nil?
       begin
         null = modules.get('null')
-        steps = input.split('.').map { |step| Step.new(step, modules) }
+        steps = input.split('>').map { |step| Step.new(step, modules) }
         final = steps.inject(null) do |previous, step|
           step.run(previous)
         end
