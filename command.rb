@@ -1,9 +1,10 @@
 # Superclass for all CLI commands
 class Command
-  attr_reader :previous, :args, :modules
+  attr_reader :raw, :previous, :args, :modules
 
-  def initialize(previous, args, modules)
-    @previous = as_array(previous)
+  def initialize(raw, args, modules)
+    @raw = raw
+    @previous = as_array(raw)
     @args = args
     @modules = modules
   end
